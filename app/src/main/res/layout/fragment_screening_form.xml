@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F6F6"
+    tools:context=".ui.screeningform.screening.ScreeningFormFragment">
+
+    <TextView
+        android:id="@+id/txt_judul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Formulir Seleksi Donor"
+        android:textAppearance="?attr/textAppearanceButton"
+        android:textColor="#027776"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_nik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="NIK"
+        android:textAppearance="?attr/buttonBarButtonStyle"
+        android:textColor="#06403F"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_judul" />
+
+    <EditText
+        android:id="@+id/edt_nik"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawablePadding="5dp"
+        android:hint="NIK"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nik" />
+
+    <TextView
+        android:id="@+id/txt_usia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Usia"
+        android:textAppearance="?attr/buttonBarButtonStyle"
+        android:textColor="#06403F"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_nik" />
+
+    <EditText
+        android:id="@+id/edt_usia"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:drawableStart="@drawable/ic_baseline_directions_run_24"
+        android:drawablePadding="5dp"
+        android:hint="Usia (tahun)"
+        android:inputType="number"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_usia" />
+
+    <TextView
+        android:id="@+id/txt_bb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Berat Badan"
+        android:textAppearance="?attr/buttonBarButtonStyle"
+        android:textColor="#06403F"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/edt_usia"
+        app:layout_constraintTop_toBottomOf="@+id/edt_nik" />
+
+    <EditText
+        android:id="@+id/edt_bb"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:drawableStart="@drawable/ic_baseline_directions_run_24"
+        android:drawablePadding="5dp"
+        android:hint="Berat Badan (kg)"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_bb" />
+
+    <TextView
+        android:id="@+id/txt_tekanandarah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Tekanan Darah"
+        android:textAppearance="?attr/buttonBarButtonStyle"
+        android:textColor="#06403F"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_bb" />
+
+    <EditText
+        android:id="@+id/edt_tekanandarah"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:drawableStart="@drawable/ic_baseline_bloodtype_24"
+        android:drawablePadding="5dp"
+        android:hint="Tekanan Darah"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_tekanandarah" />
+
+    <TextView
+        android:id="@+id/txt_kadarhb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Kadar Hemoglobin"
+        android:textAppearance="?attr/buttonBarButtonStyle"
+        android:textColor="#06403F"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/edt_tekanandarah"
+        app:layout_constraintTop_toBottomOf="@+id/edt_bb" />
+
+    <EditText
+        android:id="@+id/edt_kadarhb"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:drawableStart="@drawable/ic_baseline_bloodtype_24"
+        android:drawablePadding="5dp"
+        android:hint="Kadar HB"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/edt_tekanandarah"
+        app:layout_constraintTop_toBottomOf="@+id/txt_kadarhb" />
+
+    <TextView
+        android:id="@+id/txt_denyut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Denyut Nadi"
+        android:textAppearance="?attr/buttonBarButtonStyle"
+        android:textColor="#06403F"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_kadarhb" />
+
+    <EditText
+        android:id="@+id/edt_denyut"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:drawableStart="@drawable/ic_baseline_heartbeat_24"
+        android:drawablePadding="5dp"
+        android:hint="Denyut Nadi"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_denyut" />
+
+    <TextView
+        android:id="@+id/txt_suhu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Suhu Badan"
+        android:textAppearance="?attr/buttonBarButtonStyle"
+        android:textColor="#06403F"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/edt_denyut"
+        app:layout_constraintTop_toBottomOf="@+id/edt_kadarhb" />
+
+    <EditText
+        android:id="@+id/edt_suhu"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:drawableStart="@drawable/ic_baseline_thermostat_24"
+        android:drawablePadding="5dp"
+        android:hint="Suhu Badan"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_suhu" />
+
+    <TextView
+        android:id="@+id/txt_riwayat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Riwayat Kesehatan"
+        android:textAppearance="?attr/buttonBarButtonStyle"
+        android:textColor="#06403F"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_denyut" />
+
+    <EditText
+        android:id="@+id/edt_riwayat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:drawableStart="@drawable/ic_baseline_list_alt_24"
+        android:drawablePadding="5dp"
+        android:hint="Isi Riwayat Kesehatan"
+        android:lines="5"
+        android:minLines="5"
+        android:gravity="top|left"
+        android:maxLines="10"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_riwayat" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/bg_edit_text_white"
+        android:text="@string/simpan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_riwayat" />
+</androidx.constraintlayout.widget.ConstraintLayout>
