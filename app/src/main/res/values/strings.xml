@@ -8,4 +8,19 @@
     <string name="nama">Farahdilla Anisa Putri</string>
     <string name="NIK">14702959101104</string>
     <string name="simpan">simpan</string>
+    <string name="title_activity_home">MainActivity</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_donor">Donor List</string>
+    <string name="title_form">Forms</string>
+
+    <string name="a_plus">A+</string>
+    <string name="b_plus">B+</string>
+    <string name="o_plus">O+</string>
+    <string name="ab_plus">AB+</string>
+    <string name="a_min">A-</string>
+    <string name="b_min">B-</string>
+    <string name="ab_min">AB-</string>
+    <string name="o_min">O-</string>
+    <string name="black_colon">:</string>
 </resources>

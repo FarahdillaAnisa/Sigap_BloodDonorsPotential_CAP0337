@@ -30,7 +30,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:queryBackground="@drawable/bg_white_rounded_searchview"
         app:submitBackground="@drawable/bg_white_rounded_searchview"
-        android:outlineAmbientShadowColor=""/>
+        />
 
     <TextView
         android:id="@+id/donors_text"
@@ -92,7 +92,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="76dp"
         app:tint="@color/white"
         android:backgroundTint="#CE0606"
         android:src="@drawable/ic_baseline_add_24"
