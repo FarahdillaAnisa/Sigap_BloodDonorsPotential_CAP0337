@@ -1,1 +1,0 @@
-This is a simple Node.js + express.js web server API. This serve as a learning process to create the API needed for the Application.
