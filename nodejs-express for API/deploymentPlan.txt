@@ -1,0 +1,6 @@
+Rencana deployment aplikasi di platform cloud:
+  - Mendeploy ML model ke AI Platform
+  - Membuat REST API Menggunakan Nodejs + Express + Sequilize untuk mengintegrasikan Aplikasi Android ke ML Model dan Database di Cloud
+  - Mendeploy web server ke App Engine atau sebuah Compute Instance
+  - Membuat database MySql menggunakan Cloud SQL
+  - Mengintegrasikan keseluruhan aplikasi 
