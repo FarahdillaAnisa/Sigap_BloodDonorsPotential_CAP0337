@@ -58,27 +58,27 @@
             android:id="@+id/txt_nik"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_baseline_account_box_24"
             android:drawablePadding="5dp"
             android:drawableTint="@color/white"
             android:gravity="center"
             android:textColor="@color/white"
             android:textSize="14sp"
-            tools:text="14707161038100" />
+            tools:text="14707161038100"
+            app:drawableStartCompat="@drawable/ic_baseline_account_box_24" />
 
         <TextView
             android:id="@+id/txt_jk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:drawableStart="@drawable/ic_baseline_person_24"
             android:drawablePadding="5dp"
             android:drawableTint="@color/white"
             android:gravity="center"
             android:textColor="@color/white"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="300dp"
-            tools:text="Perempuan" />
+            tools:text="Perempuan"
+            app:drawableStartCompat="@drawable/ic_baseline_person_24" />
     </LinearLayout>
 
     <TextView
@@ -87,7 +87,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/bg_white_corner"
-        android:drawableStart="@drawable/ic_baseline_bloodtype_24"
         android:drawablePadding="5dp"
         android:elevation="5dp"
         android:gravity="center"
@@ -99,9 +98,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:text="O+" />
-
-
+        tools:text="O+"
+        app:drawableStartCompat="@drawable/ic_baseline_bloodtype_24" />
 
     <TextView
         android:id="@+id/txt_status"
@@ -111,7 +109,6 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/bg_white_corner"
-        android:drawableStart="@drawable/ic_baseline_status_checked_24"
         android:drawablePadding="5dp"
         android:elevation="8dp"
         android:gravity="center"
@@ -123,7 +120,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_goldarah"
         android:textAppearance="?attr/textAppearanceButton"
-        tools:text="berpotensi" />
+        tools:text="berpotensi"
+        app:drawableStartCompat="@drawable/ic_baseline_status_checked_24" />
 
     <TextView
         android:id="@+id/data_riwayat"
@@ -132,16 +130,16 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/bg_white_corner"
-        android:drawableStart="@drawable/ic_baseline_list_alt_24"
         android:drawablePadding="5dp"
         android:elevation="8dp"
         android:gravity="center"
         android:textStyle="bold"
         android:textColor="#085E5D"
-        android:text="Data Riwayat Pendonor"
+        android:text="@string/data_riwayat_pendonor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_status"
-        app:tint="@android:color/holo_red_dark" />
+        app:tint="@android:color/holo_red_dark"
+        app:drawableStartCompat="@drawable/ic_baseline_list_alt_24" />
 
     <TextView
         android:id="@+id/txt_recency"
@@ -149,7 +147,6 @@
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
-        android:drawableStart="@drawable/ic_baseline_circle_24"
         android:drawablePadding="5dp"
         android:gravity="center_vertical"
         android:textColor="#085E5D"
@@ -157,7 +154,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/data_riwayat"
         app:tint="@android:color/holo_red_dark"
-        tools:text="Recency :" />
+        android:text="@string/recency"
+        app:drawableStartCompat="@drawable/ic_baseline_circle_24" />
 
     <TextView
         android:id="@+id/txt_recency_detail"
@@ -182,7 +180,6 @@
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
-        android:drawableStart="@drawable/ic_baseline_circle_24"
         android:drawablePadding="5dp"
         android:gravity="center_vertical"
         android:textColor="#085E5D"
@@ -190,7 +187,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_recency"
         app:tint="@android:color/holo_red_dark"
-        tools:text="Frequency :" />
+        android:text="@string/frequency"
+        app:drawableStartCompat="@drawable/ic_baseline_circle_24" />
 
     <TextView
         android:id="@+id/txt_frequency_detail"
@@ -215,7 +213,6 @@
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
-        android:drawableStart="@drawable/ic_baseline_circle_24"
         android:drawablePadding="5dp"
         android:gravity="center_vertical"
         android:textColor="#085E5D"
@@ -223,7 +220,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_frequency"
         app:tint="@android:color/holo_red_dark"
-        tools:text="Monetary :" />
+        android:text="@string/monetary"
+        app:drawableStartCompat="@drawable/ic_baseline_circle_24" />
 
     <TextView
         android:id="@+id/txt_monetary_detail"
@@ -248,7 +246,6 @@
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
-        android:drawableStart="@drawable/ic_baseline_circle_24"
         android:drawablePadding="5dp"
         android:gravity="center_vertical"
         android:textColor="#085E5D"
@@ -256,7 +253,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_monetary"
         app:tint="@android:color/holo_red_dark"
-        tools:text="Time :" />
+        android:text="@string/time"
+        app:drawableStartCompat="@drawable/ic_baseline_circle_24" />
 
     <TextView
         android:id="@+id/txt_time_detail"
