@@ -1,11 +1,77 @@
 <resources>
     <string name="app_name">Sigap_BloodDonorsClassification_CAP0337</string>
-    <string name="title_activity_main2">MainActivity2</string>
+    <!--<string name="title_activity_main2">MainActivity2</string>
     <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_2">Tab 2</string>-->
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--<string name="hello_blank_fragment">Hello blank fragment</string>-->
     <string name="nama">Farahdilla Anisa Putri</string>
     <string name="NIK">14702959101104</string>
     <string name="simpan">simpan</string>
+    <string name="title_activity_home">MainActivity</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_donor">Donor List</string>
+    <string name="title_form">Forms</string>
+
+    <string name="a_plus">A+</string>
+    <string name="b_plus">B+</string>
+    <string name="o_plus">O+</string>
+    <string name="ab_plus">AB+</string>
+    <string name="a_min">A-</string>
+    <string name="b_min">B-</string>
+    <string name="ab_min">AB-</string>
+    <string name="o_min">O-</string>
+    <string name="black_colon">:</string>
+
+    <string name="daftar_pendonor_darah">Daftar Pendonor Darah</string>
+    <string name="potensial">Potensial</string>
+    <string name="tidak_potensial">Tidak Potensial</string>
+    <string name="floating_action_button">floating action button</string>
+    <string name="data_riwayat_pendonor">Data Riwayat Pendonor</string>
+
+    <string name="recency">Recency :</string>
+    <string name="frequency">Frequency :</string>
+    <string name="monetary">Monetary :</string>
+    <string name="time">Time :</string>
+
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+
+    <string name="create_account">Create Account</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone Number</string>
+
+    <string name="data_pendonor_darah">Data Pendonor Darah</string>
+    <string name="data_pendonor">Data Pendonor</string>
+    <string name="riwayat_pendonor">Riwayat Pendonor</string>
+
+    <string name="filter">Filter</string>
+
+    <string name="data_riwayat_donor">Data Riwayat Donor</string>
+    <string name="nik_number">NIK</string>
+    <string name="recency_name">Recency</string>
+    <string name="recency_history">Recency (Berapa Bulan Sejak Donasi Terakhir)</string>
+    <string name="frequency_donor">Frequency</string>
+    <string name="frequency_donor_blood">Frequency (Frekuensi Donor Darah)</string>
+    <string name="monetary_donor">Monetary</string>
+    <string name="monetary_total">Monetary (Total CC Donor Darah)</string>
+    <string name="time_donor">Time</string>
+    <string name="time_donor_history">Time (Berapa bulan sejak donasi pertama)</string>
+
+    <string name="formulir_seleksi_donor">Formulir Seleksi Donor</string>
+    <string name="usia">Usia</string>
+    <string name="usia_tahun">Usia (tahun)</string>
+    <string name="berat_badan">Berat Badan</string>
+    <string name="berat_badan_kg">Berat Badan (kg)</string>
+    <string name="tekanan_darah">Tekanan Darah</string>
+    <string name="kadar_hemoglobin">Kadar Hemoglobin</string>
+    <string name="kadar_hb">Kadar HB</string>
+    <string name="denyut_nadi">Denyut Nadi</string>
+    <string name="suhu_badan">Suhu Badan</string>
+    <string name="riwayat_kesehatan">Riwayat Kesehatan</string>
+    <string name="isi_riwayat_kesehatan">Isi Riwayat Kesehatan</string>
+
 </resources>

@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#F6F6F6">
-
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <TextView
         android:id="@+id/txt_judul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Data Riwayat Donor"
+        android:text="@string/data_riwayat_donor"
         android:textAppearance="?attr/textAppearanceButton"
         android:textColor="#027776"
-        android:textSize="16dp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,10 +28,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="NIK"
+        android:text="@string/nik_number"
         android:textAppearance="?attr/buttonBarButtonStyle"
         android:textColor="#06403F"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_judul" />
@@ -43,8 +45,8 @@
         android:layout_marginEnd="16dp"
         android:drawableStart="@drawable/ic_baseline_person_24"
         android:drawablePadding="5dp"
-        android:textSize="14dp"
-        android:hint="NIK"
+        android:textSize="16sp"
+        android:hint="@string/nik_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_nik" />
@@ -55,10 +57,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Recency"
+        android:text="@string/recency_name"
         android:textAppearance="?attr/buttonBarButtonStyle"
         android:textColor="#06403F"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_nik" />
@@ -72,8 +74,8 @@
         android:layout_marginEnd="16dp"
         android:drawableStart="@drawable/ic_baseline_access_time_24"
         android:drawablePadding="5dp"
-        android:hint="Recency (Berapa Bulan Sejak Donasi Terakhir)"
-        android:textSize="14dp"
+        android:hint="@string/recency_history"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_recency" />
@@ -84,10 +86,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Frequency"
+        android:text="@string/frequency_donor"
         android:textAppearance="?attr/buttonBarButtonStyle"
         android:textColor="#06403F"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_recency" />
@@ -101,8 +103,8 @@
         android:layout_marginEnd="16dp"
         android:drawableStart="@drawable/ic_baseline_bloodtype_24"
         android:drawablePadding="5dp"
-        android:hint="Frequency (Frekuensi Donor Darah)"
-        android:textSize="14dp"
+        android:hint="@string/frequency_donor_blood"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_frequency" />
@@ -113,10 +115,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Monetary"
+        android:text="@string/monetary_donor"
         android:textAppearance="?attr/buttonBarButtonStyle"
         android:textColor="#06403F"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_frequency" />
@@ -130,8 +132,8 @@
         android:layout_marginEnd="16dp"
         android:drawableStart="@drawable/ic_baseline_access_time_24"
         android:drawablePadding="5dp"
-        android:hint="Monetary (Total CC Donor Darah)"
-        android:textSize="14dp"
+        android:hint="@string/monetary_total"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_monetary" />
@@ -142,10 +144,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Time"
+        android:text="@string/time_donor"
         android:textAppearance="?attr/buttonBarButtonStyle"
         android:textColor="#06403F"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_monetary" />
@@ -159,8 +161,8 @@
         android:layout_marginEnd="16dp"
         android:drawableStart="@drawable/ic_baseline_bloodtype_24"
         android:drawablePadding="5dp"
-        android:hint="Time (Berapa bulan sejak donasi pertama)"
-        android:textSize="14dp"
+        android:hint="@string/time_donor_history"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_time" />
@@ -174,8 +176,9 @@
         android:layout_marginEnd="48dp"
         android:background="@drawable/bg_edit_text_white"
         android:text="@string/simpan"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_time" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

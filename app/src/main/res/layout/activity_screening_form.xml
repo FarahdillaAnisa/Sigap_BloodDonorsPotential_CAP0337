@@ -23,10 +23,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Data Pendonor Darah"
+        android:text="@string/data_pendonor_darah"
         android:textAppearance="?attr/textAppearanceButton"
         android:textColor="#085E5D"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,13 +52,13 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Data Pendonor"
+            android:text="@string/data_pendonor"
             />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Riwayat Pendonor"
+            android:text="@string/riwayat_pendonor"
             />
 
     </com.google.android.material.tabs.TabLayout>
