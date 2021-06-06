@@ -5,15 +5,37 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.icha.sigap_blooddonorsclassification_cap0337.R
+import com.icha.sigap_blooddonorsclassification_cap0337.databinding.FragmentNonpotentialDonorsBinding
+import com.icha.sigap_blooddonorsclassification_cap0337.databinding.FragmentPotentialDonorsBinding
 
 class NonPotentialDonorsFragment : Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_nonpotential_donors, container, false)
+
+    private lateinit var nonpotentialDonorsBinding: FragmentNonpotentialDonorsBinding
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?): View? {
+
+        nonpotentialDonorsBinding = FragmentNonpotentialDonorsBinding.inflate(inflater, container,
+                false)
+        return nonpotentialDonorsBinding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        if (activity != null)
+        {
+            val nonPotentialAdapter = NonPotentialAdapter()
+            //nonPotentialAdapter.setNPList()         // put data to rv
+
+            with (nonpotentialDonorsBinding.rvTemporary)
+            {
+                layoutManager = LinearLayoutManager(context)
+                setHasFixedSize(true)
+                adapter = nonPotentialAdapter
+            }
+        }
+    }
 }
