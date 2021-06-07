@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F6F6"
+    tools:context=".ui.donordetails.DonorsDetailActivity">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:background="@drawable/bg_donor_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_profile"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="5dp"
+        android:elevation="8dp"
+        android:src="@drawable/user_512"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/txt_nama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_profile"
+        tools:text="Cherish Coleman" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nama">
+
+        <TextView
+            android:id="@+id/txt_nik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/white"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            tools:text="14707161038100"
+            app:drawableStartCompat="@drawable/ic_baseline_account_box_24" />
+
+        <TextView
+            android:id="@+id/txt_jk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/white"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="300dp"
+            tools:text="Perempuan"
+            app:drawableStartCompat="@drawable/ic_baseline_person_24" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_goldarah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_white_corner"
+        android:drawablePadding="5dp"
+        android:elevation="5dp"
+        android:gravity="center"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:text="O+"
+        app:drawableStartCompat="@drawable/ic_baseline_bloodtype_24" />
+
+    <TextView
+        android:id="@+id/txt_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/bg_white_corner"
+        android:drawablePadding="5dp"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:padding="15dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_goldarah"
+        android:textAppearance="?attr/textAppearanceButton"
+        tools:text="berpotensi"
+        app:drawableStartCompat="@drawable/ic_baseline_status_checked_24" />
+
+    <TextView
+        android:id="@+id/data_riwayat"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_white_corner"
+        android:drawablePadding="5dp"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="#085E5D"
+        android:text="@string/data_riwayat_pendonor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_status"
+        app:tint="@android:color/holo_red_dark"
+        app:drawableStartCompat="@drawable/ic_baseline_list_alt_24" />
+
+    <TextView
+        android:id="@+id/txt_recency"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:textColor="#085E5D"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/data_riwayat"
+        app:tint="@android:color/holo_red_dark"
+        android:text="@string/recency"
+        app:drawableStartCompat="@drawable/ic_baseline_circle_24" />
+
+    <TextView
+        android:id="@+id/txt_recency_detail"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txt_recency"
+        app:layout_constraintTop_toBottomOf="@+id/data_riwayat"
+        app:tint="@android:color/holo_red_dark"
+        tools:text="Hasil Recency" />
+
+    <TextView
+        android:id="@+id/txt_frequency"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:textColor="#085E5D"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_recency"
+        app:tint="@android:color/holo_red_dark"
+        android:text="@string/frequency"
+        app:drawableStartCompat="@drawable/ic_baseline_circle_24" />
+
+    <TextView
+        android:id="@+id/txt_frequency_detail"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txt_recency"
+        app:layout_constraintTop_toBottomOf="@+id/txt_recency_detail"
+        app:tint="@android:color/holo_red_dark"
+        tools:text="Hasil Frequency" />
+
+    <TextView
+        android:id="@+id/txt_monetary"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:textColor="#085E5D"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_frequency"
+        app:tint="@android:color/holo_red_dark"
+        android:text="@string/monetary"
+        app:drawableStartCompat="@drawable/ic_baseline_circle_24" />
+
+    <TextView
+        android:id="@+id/txt_monetary_detail"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txt_recency"
+        app:layout_constraintTop_toBottomOf="@+id/txt_frequency_detail"
+        app:tint="@android:color/holo_red_dark"
+        tools:text="Hasil Monetary" />
+
+    <TextView
+        android:id="@+id/txt_time"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:textColor="#085E5D"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_monetary"
+        app:tint="@android:color/holo_red_dark"
+        android:text="@string/time"
+        app:drawableStartCompat="@drawable/ic_baseline_circle_24" />
+
+    <TextView
+        android:id="@+id/txt_time_detail"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txt_recency"
+        app:layout_constraintTop_toBottomOf="@+id/txt_monetary_detail"
+        app:tint="@android:color/holo_red_dark"
+        tools:text="Hasil Time" />
+</androidx.constraintlayout.widget.ConstraintLayout>
