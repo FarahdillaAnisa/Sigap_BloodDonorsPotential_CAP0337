@@ -26,6 +26,7 @@ class PotentialDonorsFragment : Fragment() {
 
         if (activity != null)
         {
+            // set progress bar
             val potentialAdapter = PotentialAdapter()
             //potentialAdapter.setPList()         // put data to rv
 

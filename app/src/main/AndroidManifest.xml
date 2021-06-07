@@ -31,7 +31,8 @@
 
         </activity>
         <activity android:name=".ui.screeningform.ScreeningFormActivity" />
-        <activity android:name=".ui.donordetails.DonorsDetailActivity" >
+        <activity android:name=".ui.donordetails.DonorsDetailActivity"
+            android:parentActivityName=".ui.home.HomeActivity">
 
         </activity>
         <activity android:name=".ui.donorlist.BloodDonorListActivity" />

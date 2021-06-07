@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#F6F6F6">
+    android:background="#F6F6F6"
+    tools:context=".ui.screeningform.personaldata.PersonalFormFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="@string/data_riwayat_donor"
+            android:text="@string/formulir_data_diri"
             android:textAppearance="?attr/textAppearanceButton"
             android:textColor="#027776"
             android:textSize="18sp"
@@ -48,20 +49,20 @@
             android:layout_marginEnd="16dp"
             android:drawableStart="@drawable/ic_baseline_person_24"
             android:drawablePadding="5dp"
-            android:textSize="16sp"
             android:hint="@string/nik_number"
             android:inputType="number"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_nik" />
 
         <TextView
-            android:id="@+id/txt_recency"
+            android:id="@+id/txt_nama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="@string/recency_name"
+            android:text="@string/nama_lengkap"
             android:textAppearance="?attr/buttonBarButtonStyle"
             android:textColor="#06403F"
             android:textSize="16sp"
@@ -70,36 +71,93 @@
             app:layout_constraintTop_toBottomOf="@+id/edt_nik" />
 
         <EditText
-            android:id="@+id/edt_recency"
+            android:id="@+id/edt_nama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            android:drawableStart="@drawable/ic_baseline_access_time_24"
+            android:drawableStart="@drawable/ic_baseline_name_outline_24"
             android:drawablePadding="5dp"
-            android:hint="@string/recency_history"
+            android:hint="@string/nama_lengkap"
             android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_recency" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_nama" />
 
         <TextView
-            android:id="@+id/txt_frequency"
+            android:id="@+id/txt_jeniskelamin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:text="@string/frequency_donor"
+            android:text="@string/jenis_kelamin"
             android:textAppearance="?attr/buttonBarButtonStyle"
             android:textColor="#06403F"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_recency" />
+            app:layout_constraintTop_toBottomOf="@+id/edt_nama"
+            tools:layout_editor_absoluteY="255dp" />
 
         <EditText
-            android:id="@+id/edt_frequency"
+            android:id="@+id/edt_jeniskelamin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:drawableStart="@drawable/ic_baseline_wc_24"
+            android:drawablePadding="5dp"
+            android:hint="@string/jenis_kelamin"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_jeniskelamin" />
+
+        <TextView
+            android:id="@+id/txt_goldarah"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/golongan_darah"
+            android:textAppearance="?attr/buttonBarButtonStyle"
+            android:textColor="#06403F"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edt_jeniskelamin"
+            tools:layout_editor_absoluteY="350dp" />
+
+        <EditText
+            android:id="@+id/edt_goldarah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:drawableStart="@drawable/ic_baseline_water_drop_24"
+            android:drawablePadding="5dp"
+            android:hint="@string/golongan_darah"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_goldarah" />
+
+        <TextView
+            android:id="@+id/txt_rhesus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/rhesus"
+            android:textAppearance="?attr/buttonBarButtonStyle"
+            android:textColor="#06403F"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_goldarah" />
+
+        <EditText
+            android:id="@+id/edt_rhesus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -107,83 +165,24 @@
             android:layout_marginEnd="16dp"
             android:drawableStart="@drawable/ic_baseline_bloodtype_24"
             android:drawablePadding="5dp"
-            android:hint="@string/frequency_donor_blood"
-            android:textSize="16sp"
+            android:hint="@string/rhesus"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_frequency" />
-
-        <TextView
-            android:id="@+id/txt_monetary"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/monetary_donor"
-            android:textAppearance="?attr/buttonBarButtonStyle"
-            android:textColor="#06403F"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_frequency" />
-
-        <EditText
-            android:id="@+id/edt_monetary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:drawableStart="@drawable/ic_baseline_access_time_24"
-            android:drawablePadding="5dp"
-            android:hint="@string/monetary_total"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_monetary" />
-
-        <TextView
-            android:id="@+id/txt_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/time_donor"
-            android:textAppearance="?attr/buttonBarButtonStyle"
-            android:textColor="#06403F"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_monetary" />
-
-        <EditText
-            android:id="@+id/edt_time"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:drawableStart="@drawable/ic_baseline_bloodtype_24"
-            android:drawablePadding="5dp"
-            android:hint="@string/time_donor_history"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_time" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_rhesus" />
 
         <Button
-            android:id="@+id/btn_save_riwayat"
+            android:id="@+id/btn_save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="48dp"
             android:background="@drawable/bg_edit_text_white"
             android:text="@string/simpan"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_time" />
-
+            app:layout_constraintTop_toBottomOf="@+id/edt_rhesus" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

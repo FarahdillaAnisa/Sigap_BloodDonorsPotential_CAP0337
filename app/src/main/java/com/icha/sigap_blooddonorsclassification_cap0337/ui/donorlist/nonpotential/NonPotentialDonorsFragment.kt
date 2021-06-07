@@ -27,6 +27,7 @@ class NonPotentialDonorsFragment : Fragment() {
 
         if (activity != null)
         {
+            // set progress bar
             val nonPotentialAdapter = NonPotentialAdapter()
             //nonPotentialAdapter.setNPList()         // put data to rv
 

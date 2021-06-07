@@ -13,10 +13,10 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var registerBinding: ActivityRegisterBinding
 
-    private lateinit var registerName : String
-    private lateinit var registerEmail : String
-    private lateinit var registerPhone : String
-    private lateinit var registerPassword : String
+    private lateinit var registerPName : String
+    private lateinit var registerPEmail : String
+    private lateinit var registerPPhone : String
+    private lateinit var registerPPassword : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,12 +36,15 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         if (v?.id == R.id.btn_goto_register)
         {
-            registerName = registerBinding.registerName.text.toString()
-            registerEmail = registerBinding.registerEmail.text.toString()
-            registerPhone = registerBinding.registerPhone.text.toString()
-            registerPassword = registerBinding.registerPassword.text.toString()
+            with (registerBinding)
+            {
+                registerPName = registerName.text.toString()
+                registerPEmail = registerEmail.text.toString()
+                registerPPhone = registerPhone.text.toString()
+                registerPPassword = registerPassword.text.toString()
+            }
 
-            if (registerName.isEmpty() && registerEmail.isEmpty() && registerPhone.isEmpty() && registerPassword.isEmpty())
+            if (registerPName.isEmpty() && registerPEmail.isEmpty() && registerPPhone.isEmpty() && registerPPassword.isEmpty())
             {
                 val builder = AlertDialog.Builder(this)
                 builder.setTitle("Field can not be empty !")
@@ -49,7 +52,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                 val alert = builder.create()
                 alert.show()
             }
-            else if (registerName.isEmpty())
+            else if (registerPName.isEmpty())
             {
                 val builder = AlertDialog.Builder(this)
                 builder.setTitle("Name can not be empty !")
@@ -57,7 +60,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                 val alert = builder.create()
                 alert.show()
             }
-            else if (registerEmail.isEmpty())
+            else if (registerPEmail.isEmpty())
             {
                 val builder = AlertDialog.Builder(this)
                 builder.setTitle("Email can not be empty !")
@@ -65,7 +68,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                 val alert = builder.create()
                 alert.show()
             }
-            else if (registerPhone.isEmpty())
+            else if (registerPPhone.isEmpty())
             {
                 val builder = AlertDialog.Builder(this)
                 builder.setTitle("Phone number can not be empty !")
@@ -73,7 +76,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                 val alert = builder.create()
                 alert.show()
             }
-            else if (registerPassword.isEmpty())
+            else if (registerPPassword.isEmpty())
             {
                 val builder = AlertDialog.Builder(this)
                 builder.setTitle("Password can not be empty !")
@@ -81,10 +84,10 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                 val alert = builder.create()
                 alert.show()
             }
-            else if (!registerName.isEmpty() && !registerEmail.isEmpty() && !registerPhone.isEmpty() && !registerPassword.isEmpty())
+            else if (!(registerPName.isEmpty() && registerPEmail.isEmpty() && registerPPhone.isEmpty() && registerPPassword.isEmpty()))
             {       // save data to server
-                val registerDt = RegisterData(registerName, registerEmail,
-                    registerPhone, registerPassword)
+                val registerDt = RegisterData(registerPName, registerPEmail,
+                    registerPPhone, registerPPassword)
 
                 val registerIntent = Intent(this@RegisterActivity, LoginActivity::class.java)
                 registerIntent.putExtra("REGISTER_DATA", registerDt)

@@ -61,17 +61,10 @@
     <string name="time_donor">Time</string>
     <string name="time_donor_history">Time (Berapa bulan sejak donasi pertama)</string>
 
-    <string name="formulir_seleksi_donor">Formulir Seleksi Donor</string>
-    <string name="usia">Usia</string>
-    <string name="usia_tahun">Usia (tahun)</string>
-    <string name="berat_badan">Berat Badan</string>
-    <string name="berat_badan_kg">Berat Badan (kg)</string>
-    <string name="tekanan_darah">Tekanan Darah</string>
-    <string name="kadar_hemoglobin">Kadar Hemoglobin</string>
-    <string name="kadar_hb">Kadar HB</string>
-    <string name="denyut_nadi">Denyut Nadi</string>
-    <string name="suhu_badan">Suhu Badan</string>
-    <string name="riwayat_kesehatan">Riwayat Kesehatan</string>
-    <string name="isi_riwayat_kesehatan">Isi Riwayat Kesehatan</string>
+    <string name="formulir_data_diri">Formulir Data Diri</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="jenis_kelamin">Jenis Kelamin</string>
+    <string name="golongan_darah">Golongan Darah</string>
+    <string name="rhesus">Rhesus</string>
 
 </resources>
