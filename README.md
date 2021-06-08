@@ -32,13 +32,13 @@ Documentation Version 1 :
 8. Home button is used to go to Home page. If user pressed home button, application will redirect user to Home page.
 8.1. Home page will show statistical information about blood stock and number of donor people.
 10. Donor list button is used to go to Donor List page. If user pressed donor list button, application will redirect user to Donor List page.
-10.1. Donor List page will show list of potential and non potential donors, user can add new donor by pressing add button on bottom left of the page.
-10.2. Application will redirect user to Forms page.
-10.3. If user press one of the donor list on screen, application will show Details page.
+- Donor List page will show list of potential and non potential donors, user can add new donor by pressing add button on bottom left of the page.
+- Application will redirect user to Forms page.
+- If user press one of the donor list on screen, application will show Details page.
 12. Forms button is used to go to Forms page. If user pressed forms button, application will directs user to Forms page.
-12.1. Forms page will show donor profile data form and donor history form.
-12.2. Every forms input will be validated to prevent any empty input being made, then application will save data in storage.
-12.3. Machine learning will determine whether that person is a potential donor or not.
-12.4. Screening result can be seen in Donor List page.
+- Forms page will show donor profile data form and donor history form.
+- Every forms input will be validated to prevent any empty input being made, then application will save data in storage.
+- Machine learning will determine whether that person is a potential donor or not.
+- Screening result can be seen in Donor List page.
 13. IF user choose to go to Details page, application will show Details page. User can find needed information related to the donor person. User can press back button on top left of the screen to go back to Home page.
 14. If user doesn't want to use the application anymore, user can choose to logout by presseing logout button on Home page menu.
