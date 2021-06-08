@@ -29,4 +29,5 @@ task clean(type: Delete) {
 ext {
     roomVersion = '2.2.3'
     roomRuntimeVersion = '2.2.5'
+    ktxVersion = '2.3.0'
 }

@@ -1,13 +1,11 @@
 package com.icha.sigap_blooddonorsclassification_cap0337.ui.screeningform.riwayat
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import com.icha.sigap_blooddonorsclassification_cap0337.R
@@ -25,11 +23,11 @@ class RiwayatDonorFragment : Fragment(), View.OnClickListener {
     private lateinit var riwayatDonorBinding: FragmentRiwayatDonorBinding
     private lateinit var viewModel: DonorScreeningViewModel
 
-//    private lateinit var riwayatNik : String
     private lateinit var riwayatRecency : String
     private lateinit var riwayatFrequency : String
     private lateinit var riwayatMonetary : String
     private lateinit var riwayatTime : String
+    private lateinit var hasilPrediksi : String
 
     companion object {
         var EXTRA_NIK = "extra_nik"
@@ -49,8 +47,8 @@ class RiwayatDonorFragment : Fragment(), View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        riwayatDonorBinding.edtNik.setText(EXTRA_NIK)
+        val dataNik = arguments?.getString(EXTRA_NIK)
+        riwayatDonorBinding.edtNik.setText(dataNik)
 
         //Prediksi
         riwayatDonorBinding.btnPredict.setOnClickListener {
@@ -74,9 +72,11 @@ class RiwayatDonorFragment : Fragment(), View.OnClickListener {
             val outputFeature0 = outputs.outputFeature0AsTensorBuffer.intArray
 
             if (outputFeature0[0] == 0) {
-                riwayatDonorBinding.edtPrediksi.setText("Berpotensi")
+                hasilPrediksi = "Berpotensi"
+                riwayatDonorBinding.edtPrediksi.setText(hasilPrediksi)
             } else {
-                riwayatDonorBinding.edtPrediksi.setText("Tidak Berpotensi")
+                hasilPrediksi = "Tidak Berpotensi"
+                riwayatDonorBinding.edtPrediksi.setText(hasilPrediksi)
             }
 
             model.close()
@@ -170,7 +170,7 @@ class RiwayatDonorFragment : Fragment(), View.OnClickListener {
                     riwayatFrequency.toInt(),
                     riwayatMonetary.toInt(),
                     riwayatTime.toInt(),
-                    riwayatDonorBinding.edtPrediksi.toString()
+                    hasilPrediksi
                 )
                 Log.d("Data Donor ", dataDonor.toString())
 
