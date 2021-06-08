@@ -13,10 +13,5 @@ class BloodDonorListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         donorsListBinding = ActivityBloodDonorsListBinding.inflate(layoutInflater)
         setContentView(donorsListBinding.root)
-
-        donorsListBinding.fabToForm.setOnClickListener {
-            val intent = Intent(this, ScreeningFormActivity::class.java)
-            startActivity(intent)
-        }
     }
 }

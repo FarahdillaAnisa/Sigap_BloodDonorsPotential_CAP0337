@@ -38,22 +38,13 @@ class PotentialDonorsFragment : Fragment() {
             potensialViewModel = ViewModelProvider(this, factory)[DonorListViewModel::class.java]
             potensialAdapter = PotentialAdapter()
             //potentialAdapter.setPList()         // put data to rv
-            // set progress bar
 
+            potentialDonorsBinding.progressBar.visibility = View.VISIBLE
             potensialViewModel.getDataPotensial().observe(viewLifecycleOwner, { potensialData ->
                 if (potensialData != null) {
-                    when(potensialData.status) {
-                        Status.LOADING -> potentialDonorsBinding.progressBar.visibility = View.VISIBLE
-                        Status.SUCCESS ->  {
-                            potentialDonorsBinding.progressBar.visibility = View.GONE
-                            potensialAdapter.setPList(potensialData as List<DataPendonorEntity>)
-                            potensialAdapter.notifyDataSetChanged()
-                        }
-                        Status.ERROR -> {
-                            potentialDonorsBinding.progressBar.visibility = View.GONE
-                            Toast.makeText(context, "Terjadi Kesalahan", Toast.LENGTH_SHORT).show()
-                        }
-                    }
+                    potentialDonorsBinding.progressBar.visibility = View.GONE
+                    potensialAdapter.setPList(potensialData)
+                    potensialAdapter.notifyDataSetChanged()
                 }
             })
 

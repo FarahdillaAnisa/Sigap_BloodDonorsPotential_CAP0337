@@ -1,12 +1,15 @@
 package com.icha.sigap_blooddonorsclassification_cap0337.ui.donorlist.nonpotential
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.icha.sigap_blooddonorsclassification_cap0337.R
 import com.icha.sigap_blooddonorsclassification_cap0337.data.source.local.entity.DataPendonorEntity
 import com.icha.sigap_blooddonorsclassification_cap0337.databinding.ItemDonorsListBinding
+import com.icha.sigap_blooddonorsclassification_cap0337.ui.donordetails.DonorsDetailActivity
 import com.icha.sigap_blooddonorsclassification_cap0337.ui.donorlist.DonorListData
 
 class NonPotentialAdapter : RecyclerView.Adapter<NonPotentialAdapter.NonPotentialHolder>() {
@@ -22,7 +25,7 @@ class NonPotentialAdapter : RecyclerView.Adapter<NonPotentialAdapter.NonPotentia
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NonPotentialHolder {
         val itemsDonorsListBinding = ItemDonorsListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return NonPotentialAdapter.NonPotentialHolder(itemsDonorsListBinding)
+        return NonPotentialHolder(itemsDonorsListBinding)
     }
 
     override fun onBindViewHolder(holder: NonPotentialHolder, position: Int) {
@@ -40,10 +43,20 @@ class NonPotentialAdapter : RecyclerView.Adapter<NonPotentialAdapter.NonPotentia
         {
             with (binding)
             {
-                Glide.with(itemView.context).load(R.drawable.profile_user).into(imgPoster)
+                Glide.with(itemView.context)
+                    .load(R.drawable.man)
+                    .apply(RequestOptions().override(48, 48))
+                    .into(imgPoster)
                 tvItemName.text = nPList.nama
                 tvItemNik.text = nPList.nik
-                tvItemBloodtype.text = nPList.golonganDarah
+                val text = "${nPList.golonganDarah}  ${nPList.rhesus}"
+                tvItemBloodtype.text = text
+            }
+
+            itemView.setOnClickListener {
+                val intent = Intent(itemView.context, DonorsDetailActivity::class.java)
+                intent.putExtra(DonorsDetailActivity.EXTRA_NIK, nPList.nik)
+                itemView.context.startActivity(intent)
             }
         }
     }

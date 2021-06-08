@@ -6,8 +6,8 @@ import com.icha.sigap_blooddonorsclassification_cap0337.vo.Resource
 
 interface DataPendonorDataSource {
     //local
-    fun getDataPotensial(): LiveData<Resource<List<DataPendonorEntity>>>
-    fun getDataNon(): LiveData<Resource<List<DataPendonorEntity>>>
+    fun getDataPotensial(): LiveData<List<DataPendonorEntity>>
+    fun getDataNon(): LiveData<List<DataPendonorEntity>>
     fun getDataFromNik(nik: String) : LiveData<DataPendonorEntity>
     suspend fun insertData(data : DataPendonorEntity)
 }

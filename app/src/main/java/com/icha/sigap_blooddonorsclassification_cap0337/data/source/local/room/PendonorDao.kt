@@ -8,10 +8,10 @@ import com.icha.sigap_blooddonorsclassification_cap0337.vo.Resource
 @Dao
 interface PendonorDao {
     @Query("SELECT * FROM datapendonortbl WHERE nomorprediksi = 1")
-    fun getDataPotensial(): LiveData<Resource<List<DataPendonorEntity>>>
+    fun getDataPotensial(): LiveData<List<DataPendonorEntity>>
 
     @Query("SELECT * FROM datapendonortbl WHERE nomorprediksi = 0")
-    fun getDataNon(): LiveData<Resource<List<DataPendonorEntity>>>
+    fun getDataNon(): LiveData<List<DataPendonorEntity>>
 
     @Transaction
     @Query("SELECT * FROM datapendonortbl WHERE nik = :nik ")

@@ -40,20 +40,12 @@ class NonPotentialDonorsFragment : Fragment() {
             nonpotentialAdapter = NonPotentialAdapter()
             //nonPotentialAdapter.setNPList()         // put data to rv
 
+            nonpotentialDonorsBinding.progressBar.visibility = View.VISIBLE
             nonpotentialViewModel.getDataNon().observe(viewLifecycleOwner, { nonPotentialData ->
                 if (nonPotentialData != null) {
-                    when(nonPotentialData.status) {
-                        Status.LOADING -> nonpotentialDonorsBinding.progressBar.visibility = View.VISIBLE
-                        Status.SUCCESS ->  {
-                            nonpotentialDonorsBinding.progressBar.visibility = View.GONE
-                            nonpotentialAdapter.setNPList(nonPotentialData as List<DataPendonorEntity>)
-                            nonpotentialAdapter.notifyDataSetChanged()
-                        }
-                        Status.ERROR -> {
-                            nonpotentialDonorsBinding.progressBar.visibility = View.GONE
-                            Toast.makeText(context, "Terjadi Kesalahan", Toast.LENGTH_SHORT).show()
-                        }
-                    }
+                    nonpotentialDonorsBinding.progressBar.visibility = View.GONE
+                    nonpotentialAdapter.setNPList(nonPotentialData)
+                    nonpotentialAdapter.notifyDataSetChanged()
                 }
 
             })

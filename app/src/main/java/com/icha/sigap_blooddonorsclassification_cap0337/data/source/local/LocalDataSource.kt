@@ -12,8 +12,8 @@ class LocalDataSource private constructor(private val mPendonorDao: PendonorDao)
             INSTANCE ?: LocalDataSource(pendonorDao)
     }
 
-    fun getDataPotensial() : LiveData<Resource<List<DataPendonorEntity>>> = mPendonorDao.getDataPotensial()
-    fun getDataNon() : LiveData<Resource<List<DataPendonorEntity>>> = mPendonorDao.getDataNon()
+    fun getDataPotensial() : LiveData<List<DataPendonorEntity>> = mPendonorDao.getDataPotensial()
+    fun getDataNon() : LiveData<List<DataPendonorEntity>> = mPendonorDao.getDataNon()
     fun getDataByNik(nik: String): LiveData<DataPendonorEntity> = mPendonorDao.getDataByNik(nik)
     suspend fun insertData(data: DataPendonorEntity) = mPendonorDao.insertData(data)
 //    fun insertDataDetail(dataDetail : DataPendonorEntity) = mPendonorDao.insertDataDetail(dataDetail)

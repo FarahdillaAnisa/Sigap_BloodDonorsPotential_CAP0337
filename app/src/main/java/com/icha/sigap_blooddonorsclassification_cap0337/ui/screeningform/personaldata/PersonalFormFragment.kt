@@ -117,23 +117,6 @@ class PersonalFormFragment : Fragment(), View.OnClickListener {
                     addToBackStack(null)
                     commit()
                 }
-
-//                val builder = AlertDialog.Builder(requireActivity())
-//                builder.setTitle("Success !")
-//                builder.setNegativeButton("OK") { dialog, _ ->
-//                    with (personalFormBinding)
-//                    {
-//                        edtNik.text.clear()
-//                        edtNama.text.clear()
-//                        edtJeniskelamin.text.clear()
-//                        edtGoldarah.text.clear()
-//                        edtRhesus.text.clear()
-//                    }
-//
-//                    dialog.cancel()
-//                }
-//                val alert = builder.create()
-//                alert.show()
             }
         }
     }

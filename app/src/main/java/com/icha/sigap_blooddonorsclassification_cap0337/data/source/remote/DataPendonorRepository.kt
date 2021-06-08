@@ -21,11 +21,11 @@ class DataPendonorRepository private constructor(
             }
     }
 
-    override fun getDataPotensial(): LiveData<Resource<List<DataPendonorEntity>>> {
+    override fun getDataPotensial(): LiveData<List<DataPendonorEntity>> {
         return localDataSource.getDataPotensial()
     }
 
-    override fun getDataNon(): LiveData<Resource<List<DataPendonorEntity>>> {
+    override fun getDataNon(): LiveData<List<DataPendonorEntity>> {
         return localDataSource.getDataNon()
     }
 

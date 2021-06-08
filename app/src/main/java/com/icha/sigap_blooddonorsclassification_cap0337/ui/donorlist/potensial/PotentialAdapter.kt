@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.icha.sigap_blooddonorsclassification_cap0337.R
 import com.icha.sigap_blooddonorsclassification_cap0337.data.source.local.entity.DataPendonorEntity
 import com.icha.sigap_blooddonorsclassification_cap0337.databinding.ItemDonorsListBinding
@@ -43,10 +44,15 @@ class PotentialAdapter : RecyclerView.Adapter<PotentialAdapter.PotentialHolder>(
         {
             with (binding)
             {
-                Glide.with(itemView.context).load(R.drawable.profile_user).into(imgPoster)
+                Glide.with(itemView.context)
+                    .load(R.drawable.man)
+                    .apply(RequestOptions().override(48,48))
+                    .into(imgPoster)
+
                 tvItemName.text = pList.nama
                 tvItemNik.text = pList.nik
-                tvItemBloodtype.text = pList.golonganDarah
+                val text = "${pList.golonganDarah} ${pList.rhesus}"
+                tvItemBloodtype.text = text
             }
 
             itemView.setOnClickListener {

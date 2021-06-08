@@ -206,7 +206,7 @@
             android:layout_marginEnd="16dp"
             android:background="@drawable/bg_edit_text_white"
             android:text="@string/prediksi"
-            android:textSize="18sp"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/edt_prediksi"
             app:layout_constraintTop_toBottomOf="@+id/txt_predict" />
