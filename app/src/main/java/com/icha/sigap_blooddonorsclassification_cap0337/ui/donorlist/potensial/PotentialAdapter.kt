@@ -1,17 +1,22 @@
 package com.icha.sigap_blooddonorsclassification_cap0337.ui.donorlist.potensial
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.icha.sigap_blooddonorsclassification_cap0337.R
+import com.icha.sigap_blooddonorsclassification_cap0337.data.source.local.entity.DataPendonorEntity
 import com.icha.sigap_blooddonorsclassification_cap0337.databinding.ItemDonorsListBinding
+import com.icha.sigap_blooddonorsclassification_cap0337.ui.donordetails.DonorsDetailActivity
 import com.icha.sigap_blooddonorsclassification_cap0337.ui.donorlist.DonorListData
+import com.icha.sigap_blooddonorsclassification_cap0337.vo.Resource
 
 class PotentialAdapter : RecyclerView.Adapter<PotentialAdapter.PotentialHolder>() {
 
-    private var potentialList = ArrayList<DonorListData>()
+    private var potentialList = ArrayList<DataPendonorEntity>()
 
-    fun setPList(potential : List<DonorListData>?)
+    fun setPList(potential : List<DataPendonorEntity>)
     {
         if (potential == null) return
         this.potentialList.clear()
@@ -32,16 +37,22 @@ class PotentialAdapter : RecyclerView.Adapter<PotentialAdapter.PotentialHolder>(
         return potentialList.size
     }
 
-    class PotentialHolder (private val binding : ItemDonorsListBinding) : RecyclerView.ViewHolder(binding.root)
+    inner class PotentialHolder (private val binding : ItemDonorsListBinding) : RecyclerView.ViewHolder(binding.root)
     {
-        fun bind (pList : DonorListData)
+        fun bind (pList : DataPendonorEntity)
         {
             with (binding)
             {
-                Glide.with(itemView.context).load(pList.donorImage).into(imgPoster)
-                tvItemName.text = pList.donorName
-                tvItemNik.text = pList.donorNik
-                tvItemBloodtype.text = pList.donorBloodType
+                Glide.with(itemView.context).load(R.drawable.profile_user).into(imgPoster)
+                tvItemName.text = pList.nama
+                tvItemNik.text = pList.nik
+                tvItemBloodtype.text = pList.golonganDarah
+            }
+
+            itemView.setOnClickListener {
+                val intent = Intent(itemView.context, DonorsDetailActivity::class.java)
+                intent.putExtra(DonorsDetailActivity.EXTRA_NIK, pList.nik)
+                itemView.context.startActivity(intent)
             }
         }
     }

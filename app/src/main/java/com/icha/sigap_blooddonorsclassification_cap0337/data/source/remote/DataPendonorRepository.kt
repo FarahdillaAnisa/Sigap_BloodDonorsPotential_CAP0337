@@ -3,6 +3,7 @@ package com.icha.sigap_blooddonorsclassification_cap0337.data.source.remote
 import androidx.lifecycle.LiveData
 import com.icha.sigap_blooddonorsclassification_cap0337.data.source.local.LocalDataSource
 import com.icha.sigap_blooddonorsclassification_cap0337.data.source.local.entity.DataPendonorEntity
+import com.icha.sigap_blooddonorsclassification_cap0337.vo.Resource
 
 class DataPendonorRepository private constructor(
     private val localDataSource: LocalDataSource
@@ -20,8 +21,12 @@ class DataPendonorRepository private constructor(
             }
     }
 
-    override fun getAllData(): LiveData<List<DataPendonorEntity>> {
-        return localDataSource.getAllData()
+    override fun getDataPotensial(): LiveData<Resource<List<DataPendonorEntity>>> {
+        return localDataSource.getDataPotensial()
+    }
+
+    override fun getDataNon(): LiveData<Resource<List<DataPendonorEntity>>> {
+        return localDataSource.getDataNon()
     }
 
     override fun getDataFromNik(nik: String): LiveData<DataPendonorEntity> {
@@ -39,7 +44,8 @@ class DataPendonorRepository private constructor(
             data.frequency,
             data.monetary,
             data.time,
-            data.labelPrediksi
+            data.labelPrediksi,
+            data.nomorPrediksi
         )
         return localDataSource.insertData(dataDonor)
     }

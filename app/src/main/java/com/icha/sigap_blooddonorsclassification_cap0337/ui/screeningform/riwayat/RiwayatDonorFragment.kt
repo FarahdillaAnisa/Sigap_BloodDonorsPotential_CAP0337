@@ -28,6 +28,7 @@ class RiwayatDonorFragment : Fragment(), View.OnClickListener {
     private lateinit var riwayatMonetary : String
     private lateinit var riwayatTime : String
     private lateinit var hasilPrediksi : String
+    private lateinit var nomorPrediksi : String
 
     companion object {
         var EXTRA_NIK = "extra_nik"
@@ -73,9 +74,11 @@ class RiwayatDonorFragment : Fragment(), View.OnClickListener {
 
             if (outputFeature0[0] == 0) {
                 hasilPrediksi = "Berpotensi"
+                nomorPrediksi = "1"
                 riwayatDonorBinding.edtPrediksi.setText(hasilPrediksi)
             } else {
                 hasilPrediksi = "Tidak Berpotensi"
+                nomorPrediksi = "0"
                 riwayatDonorBinding.edtPrediksi.setText(hasilPrediksi)
             }
 
@@ -170,7 +173,9 @@ class RiwayatDonorFragment : Fragment(), View.OnClickListener {
                     riwayatFrequency.toInt(),
                     riwayatMonetary.toInt(),
                     riwayatTime.toInt(),
-                    hasilPrediksi
+                    hasilPrediksi,
+                    nomorPrediksi.toInt()
+
                 )
                 Log.d("Data Donor ", dataDonor.toString())
 

@@ -11,6 +11,10 @@ class DonorsDetailActivity : AppCompatActivity() {
 
     private lateinit var donorsDetailBinding: ActivityDonorsDetailBinding
 
+    companion object {
+        var EXTRA_NIK = "extra_nik"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_donors_detail)

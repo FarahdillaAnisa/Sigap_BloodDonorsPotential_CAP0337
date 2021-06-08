@@ -37,5 +37,9 @@ data class DataPendonorEntity(
     var time : Int? = null,
 
     @ColumnInfo(name = "labelprediksi")
-    var labelPrediksi : String? = null
+    var labelPrediksi : String? = null,
+
+    @ColumnInfo(name = "nomorprediksi")
+    var nomorPrediksi : Int? = null
+
 )
