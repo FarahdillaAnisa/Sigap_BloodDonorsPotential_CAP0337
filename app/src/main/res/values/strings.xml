@@ -66,5 +66,8 @@
     <string name="jenis_kelamin">Jenis Kelamin</string>
     <string name="golongan_darah">Golongan Darah</string>
     <string name="rhesus">Rhesus</string>
+    <string name="prediksi">Prediksi</string>
+    <string name="hasil_prediksi">Hasil Prediksi</string>
+    <string name="selanjutnya">Selanjutnya</string>
 
 </resources>

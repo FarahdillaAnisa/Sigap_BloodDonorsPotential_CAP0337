@@ -1,6 +1,7 @@
 package com.icha.sigap_blooddonorsclassification_cap0337.ui.screeningform.personaldata
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -8,16 +9,17 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import com.icha.sigap_blooddonorsclassification_cap0337.R
 import com.icha.sigap_blooddonorsclassification_cap0337.databinding.FragmentPersonalFormBinding
+import com.icha.sigap_blooddonorsclassification_cap0337.ui.screeningform.riwayat.RiwayatDonorFragment
 
 class PersonalFormFragment : Fragment(), View.OnClickListener {
 
     private lateinit var personalFormBinding: FragmentPersonalFormBinding
 
-    private lateinit var personalNik : String
-    private lateinit var personalName : String
-    private lateinit var personalGender : String
-    private lateinit var personalBloodType : String
-    private lateinit var personalRhesus : String
+    lateinit var personalNik : String
+    lateinit var personalName : String
+    lateinit var personalGender : String
+    lateinit var personalBloodType : String
+    lateinit var personalRhesus : String
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
@@ -30,12 +32,13 @@ class PersonalFormFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        personalFormBinding.btnSave.setOnClickListener(this@PersonalFormFragment)
+        personalFormBinding.btnNext.setOnClickListener(this@PersonalFormFragment)
     }
 
     override fun onClick(v: View?) {
-        if (v?.id == R.id.btn_save)
+        if (v?.id == R.id.btn_next)
         {
+
             with (personalFormBinding)
             {
                 personalNik = edtNik.text.toString()
@@ -97,24 +100,40 @@ class PersonalFormFragment : Fragment(), View.OnClickListener {
             else if (!(personalNik.isEmpty() && personalName.isEmpty() && personalGender.isEmpty() &&
                     personalBloodType.isEmpty() && personalRhesus.isEmpty()))
             {
-                // save data to cloud
+                // save data to room
+                val mRiwayatDonorFragment = RiwayatDonorFragment()
+                val mBundle = Bundle()
+                mBundle.putString(RiwayatDonorFragment.EXTRA_NIK, personalNik)
+                mBundle.putString(RiwayatDonorFragment.EXTRA_NAMA, personalName)
+                mBundle.putString(RiwayatDonorFragment.EXTRA_JK, personalGender)
+                mBundle.putString(RiwayatDonorFragment.EXTRA_GOLONGANDARAH, personalBloodType)
+                mBundle.putString(RiwayatDonorFragment.EXTRA_RHESUS, personalRhesus)
 
-                val builder = AlertDialog.Builder(requireActivity())
-                builder.setTitle("Success !")
-                builder.setNegativeButton("OK") { dialog, _ ->
-                    with (personalFormBinding)
-                    {
-                        edtNik.text.clear()
-                        edtNama.text.clear()
-                        edtJeniskelamin.text.clear()
-                        edtGoldarah.text.clear()
-                        edtRhesus.text.clear()
-                    }
-
-                    dialog.cancel()
+                Log.d("Data Donor Argument ", mBundle.toString())
+                mRiwayatDonorFragment.arguments = mBundle
+                val mFragmentManager = fragmentManager
+                mFragmentManager?.beginTransaction()?.apply {
+                    replace(R.id.frame_container, mRiwayatDonorFragment, RiwayatDonorFragment::class.java.simpleName)
+                    addToBackStack(null)
+                    commit()
                 }
-                val alert = builder.create()
-                alert.show()
+
+//                val builder = AlertDialog.Builder(requireActivity())
+//                builder.setTitle("Success !")
+//                builder.setNegativeButton("OK") { dialog, _ ->
+//                    with (personalFormBinding)
+//                    {
+//                        edtNik.text.clear()
+//                        edtNama.text.clear()
+//                        edtJeniskelamin.text.clear()
+//                        edtGoldarah.text.clear()
+//                        edtRhesus.text.clear()
+//                    }
+//
+//                    dialog.cancel()
+//                }
+//                val alert = builder.create()
+//                alert.show()
             }
         }
     }

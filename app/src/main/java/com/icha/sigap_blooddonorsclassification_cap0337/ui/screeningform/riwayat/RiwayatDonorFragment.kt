@@ -9,18 +9,35 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.ViewModelProvider
 import com.icha.sigap_blooddonorsclassification_cap0337.R
+import com.icha.sigap_blooddonorsclassification_cap0337.data.source.local.entity.DataPendonorEntity
 import com.icha.sigap_blooddonorsclassification_cap0337.databinding.FragmentRiwayatDonorBinding
+import com.icha.sigap_blooddonorsclassification_cap0337.ml.Test
+import com.icha.sigap_blooddonorsclassification_cap0337.ui.screeningform.DonorScreeningViewModel
+import com.icha.sigap_blooddonorsclassification_cap0337.viewModel.ViewModelFactory
+import org.tensorflow.lite.DataType
+import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
+import java.nio.ByteBuffer
 
 class RiwayatDonorFragment : Fragment(), View.OnClickListener {
 
     private lateinit var riwayatDonorBinding: FragmentRiwayatDonorBinding
+    private lateinit var viewModel: DonorScreeningViewModel
 
-    private lateinit var riwayatNik : String
+//    private lateinit var riwayatNik : String
     private lateinit var riwayatRecency : String
     private lateinit var riwayatFrequency : String
     private lateinit var riwayatMonetary : String
     private lateinit var riwayatTime : String
+
+    companion object {
+        var EXTRA_NIK = "extra_nik"
+        var EXTRA_NAMA = "extra_nama"
+        var EXTRA_JK = "extra_jk"
+        var EXTRA_GOLONGANDARAH = "extra_golongandarah"
+        var EXTRA_RHESUS = "extra_rhesus"
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
@@ -33,22 +50,62 @@ class RiwayatDonorFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        riwayatDonorBinding.edtNik.setText(EXTRA_NIK)
+
+        //Prediksi
+        riwayatDonorBinding.btnPredict.setOnClickListener {
+            val recency : Int = riwayatDonorBinding.edtRecency.text.toString().toInt()
+            val frequency : Int = riwayatDonorBinding.edtFrequency.text.toString().toInt()
+            val monetary : Int = riwayatDonorBinding.edtMonetary.text.toString().toInt()
+            val time : Int = riwayatDonorBinding.edtTime.text.toString().toInt()
+
+            var byteBuffer : ByteBuffer = ByteBuffer.allocateDirect(4*4)
+            byteBuffer.putInt(recency)
+            byteBuffer.putInt(frequency)
+            byteBuffer.putInt(monetary)
+            byteBuffer.putInt(time)
+
+            val model = Test.newInstance(requireContext())
+            val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 4)
+                , DataType.FLOAT32)
+            inputFeature0.loadBuffer(byteBuffer)
+
+            val outputs = model.process(inputFeature0)
+            val outputFeature0 = outputs.outputFeature0AsTensorBuffer.intArray
+
+            if (outputFeature0[0] == 0) {
+                riwayatDonorBinding.edtPrediksi.setText("Berpotensi")
+            } else {
+                riwayatDonorBinding.edtPrediksi.setText("Tidak Berpotensi")
+            }
+
+            model.close()
+        }
+
+        val factory = ViewModelFactory.getInstance(requireContext())
+        viewModel = ViewModelProvider(this, factory)[DonorScreeningViewModel::class.java]
+
         riwayatDonorBinding.btnSaveRiwayat.setOnClickListener(this@RiwayatDonorFragment)
     }
 
     override fun onClick(v: View?) {
+        val dataNik = arguments?.getString(EXTRA_NIK)
+        val dataNama = arguments?.getString(EXTRA_NAMA)
+        val dataJk = arguments?.getString(EXTRA_JK)
+        val dataGolonganDarah = arguments?.getString(EXTRA_GOLONGANDARAH)
+        val dataRhesus = arguments?.getString(EXTRA_RHESUS)
+
         if (v?.id == R.id.btn_save_riwayat)
         {
             with (riwayatDonorBinding)
             {
-                riwayatNik = edtNik.text.toString()
                 riwayatRecency = edtRecency.text.toString()
                 riwayatFrequency = edtFrequency.text.toString()
                 riwayatMonetary = edtMonetary.text.toString()
                 riwayatTime = edtTime.text.toString()
             }
 
-            if (riwayatNik.isEmpty() && riwayatRecency.isEmpty()
+            if (dataNik!!.isEmpty() && riwayatRecency.isEmpty()
                     && riwayatFrequency.isEmpty() && riwayatMonetary.isEmpty()
                     && riwayatTime.isEmpty())
             {       // do process here
@@ -58,7 +115,7 @@ class RiwayatDonorFragment : Fragment(), View.OnClickListener {
                 val alert = builder.create()    // error
                 alert.show()
             }
-            else if (riwayatNik.isEmpty())
+            else if (dataNik.isEmpty())
             {
                 val builder = AlertDialog.Builder(requireActivity())
                 builder.setTitle("NIK can not be empty !")
@@ -98,11 +155,26 @@ class RiwayatDonorFragment : Fragment(), View.OnClickListener {
                 val alert = builder.create()
                 alert.show()
             }
-            else if (!(riwayatNik.isEmpty() && riwayatRecency.isEmpty()
+            else if (!(dataNik.isEmpty() && riwayatRecency.isEmpty()
                             && riwayatFrequency.isEmpty() && riwayatMonetary.isEmpty()
                             && riwayatTime.isEmpty()))
             {
-                // save data to cloud
+                // save data to room
+                val dataDonor = DataPendonorEntity (
+                    dataNik,
+                    dataNama,
+                    dataJk,
+                    dataGolonganDarah,
+                    dataRhesus,
+                    riwayatRecency.toInt(),
+                    riwayatFrequency.toInt(),
+                    riwayatMonetary.toInt(),
+                    riwayatTime.toInt(),
+                    riwayatDonorBinding.edtPrediksi.toString()
+                )
+                Log.d("Data Donor ", dataDonor.toString())
+
+                viewModel.insertData(dataDonor)
 
                 val builder = AlertDialog.Builder(requireActivity())
                 builder.setTitle("Success !")

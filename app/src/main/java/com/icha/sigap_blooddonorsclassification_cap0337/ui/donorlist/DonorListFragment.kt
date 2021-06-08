@@ -1,5 +1,6 @@
 package com.icha.sigap_blooddonorsclassification_cap0337.ui.donorlist
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +16,7 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.icha.sigap_blooddonorsclassification_cap0337.R
 import com.icha.sigap_blooddonorsclassification_cap0337.databinding.ActivityBloodDonorsListBinding
+import com.icha.sigap_blooddonorsclassification_cap0337.ui.screeningform.ScreeningFormActivity
 
 class DonorListFragment : Fragment() {
 

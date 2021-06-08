@@ -171,6 +171,46 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_time" />
 
+        <TextView
+            android:id="@+id/txt_predict"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/prediksi"
+            android:textAppearance="?attr/buttonBarButtonStyle"
+            android:textColor="#06403F"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_time" />
+
+        <EditText
+            android:id="@+id/edt_prediksi"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/ic_baseline_circle_24"
+            android:drawablePadding="5dp"
+            android:hint="@string/hasil_prediksi"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_predict" />
+
+        <Button
+            android:id="@+id/btn_predict"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_edit_text_white"
+            android:text="@string/prediksi"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/edt_prediksi"
+            app:layout_constraintTop_toBottomOf="@+id/txt_predict" />
+
         <Button
             android:id="@+id/btn_save_riwayat"
             android:layout_width="match_parent"
@@ -182,8 +222,9 @@
             android:text="@string/simpan"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edt_time" />
+            app:layout_constraintTop_toBottomOf="@+id/edt_prediksi" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
