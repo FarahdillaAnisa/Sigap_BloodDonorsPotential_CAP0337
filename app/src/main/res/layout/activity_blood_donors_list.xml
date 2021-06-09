@@ -19,32 +19,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/searchView"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/bg_white_rounded_searchview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:queryBackground="@drawable/bg_white_rounded_searchview"
-        app:submitBackground="@drawable/bg_white_rounded_searchview"
-        />
-
     <TextView
         android:id="@+id/donors_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:text="@string/daftar_pendonor_darah"
         android:textAppearance="?attr/textAppearanceButton"
         android:textColor="#085E5D"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/searchView"
-        app:layout_constraintStart_toStartOf="@+id/searchView"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"

@@ -7,13 +7,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.FragmentManager
 import com.icha.sigap_blooddonorsclassification_cap0337.R
+import com.icha.sigap_blooddonorsclassification_cap0337.databinding.ActivityScreeningFormBinding
 import com.icha.sigap_blooddonorsclassification_cap0337.databinding.FragmentPersonalFormBinding
 import com.icha.sigap_blooddonorsclassification_cap0337.ui.screeningform.riwayat.RiwayatDonorFragment
 
 class PersonalFormFragment : Fragment(), View.OnClickListener {
 
     private lateinit var personalFormBinding: FragmentPersonalFormBinding
+    private lateinit var activityScreeningFormBinding: ActivityScreeningFormBinding
 
     lateinit var personalNik : String
     lateinit var personalName : String
@@ -113,7 +116,8 @@ class PersonalFormFragment : Fragment(), View.OnClickListener {
                 mRiwayatDonorFragment.arguments = mBundle
                 val mFragmentManager = fragmentManager
                 mFragmentManager?.beginTransaction()?.apply {
-                    replace(R.id.frame_container, mRiwayatDonorFragment, RiwayatDonorFragment::class.java.simpleName)
+                    replace(R.id.frame_container, mRiwayatDonorFragment)
+//                    activityScreeningFormBinding.viewPager.setCurrentItem(1)
                     addToBackStack(null)
                     commit()
                 }

@@ -47,24 +47,16 @@ class HomeFragment : Fragment() {
         BarChart = homeBinding.bStockChart
 
         val xVal = ArrayList<String>()
-        xVal.add("A+")
-        xVal.add("B+")
-        xVal.add("O+")
-        xVal.add("AB+")
-        xVal.add("A-")
-        xVal.add("B-")
-        xVal.add("AB-")
-        xVal.add("O-")
+        xVal.add("A")
+        xVal.add("B")
+        xVal.add("O")
+        xVal.add("AB")
 
         val barEntry = ArrayList<BarEntry>()    // put data to chart
         barEntry.add(BarEntry(8721f, 0))
         barEntry.add(BarEntry(9748f, 1))
         barEntry.add(BarEntry(13013f, 2))
         barEntry.add(BarEntry(2678f, 3))
-        barEntry.add(BarEntry(11f, 4))
-        barEntry.add(BarEntry(11f, 5))
-        barEntry.add(BarEntry(10f, 6))
-        barEntry.add(BarEntry(19f, 7))
 
         val barDataSet = BarDataSet(barEntry, "Blood Stock")
         barData = BarData(xVal, barDataSet)
