@@ -10,8 +10,6 @@ import com.icha.sigap_blooddonorsclassification_cap0337.R
 import com.icha.sigap_blooddonorsclassification_cap0337.data.source.local.entity.DataPendonorEntity
 import com.icha.sigap_blooddonorsclassification_cap0337.databinding.ItemDonorsListBinding
 import com.icha.sigap_blooddonorsclassification_cap0337.ui.donordetails.DonorsDetailActivity
-import com.icha.sigap_blooddonorsclassification_cap0337.ui.donorlist.DonorListData
-import com.icha.sigap_blooddonorsclassification_cap0337.vo.Resource
 
 class PotentialAdapter : RecyclerView.Adapter<PotentialAdapter.PotentialHolder>() {
 

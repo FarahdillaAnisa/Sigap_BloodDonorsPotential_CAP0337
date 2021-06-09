@@ -1,15 +1,10 @@
 package com.icha.sigap_blooddonorsclassification_cap0337.ui.home
 
-import android.content.Intent
-import android.content.Intent.getIntent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.data.BarData
@@ -17,12 +12,12 @@ import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.icha.sigap_blooddonorsclassification_cap0337.R
 import com.icha.sigap_blooddonorsclassification_cap0337.databinding.FragmentHomeBinding
-import com.icha.sigap_blooddonorsclassification_cap0337.ui.register.RegisterData
+import com.icha.sigap_blooddonorsclassification_cap0337.viewModel.ViewModelFactory
 
 class HomeFragment : Fragment() {
 
-    //private lateinit var homeViewModel: HomeViewModel
     private lateinit var homeBinding: FragmentHomeBinding
+    private lateinit var viewModel: HomeViewModel
 
     lateinit var barData: BarData
     lateinit var BarChart: BarChart
@@ -36,14 +31,18 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        setChartData()
-        setDonor()
+        if (activity != null) {
+            val factory = ViewModelFactory.getInstance(requireActivity())
+            viewModel = ViewModelProvider(this, factory)[HomeViewModel::class.java]
+            setChartData()
+//            homeBinding.typeAPlus.text = viewModel.getIntPotensial().toString()
+//            homeBinding.typeBPlus.text = viewModel.getIntNon().toString()
+            setDonor()
+        }
     }
 
     private fun setChartData()  // update data from server
     {
-        //BarChart = view?.findViewById(R.id.b_stock_chart)!!
         BarChart = homeBinding.bStockChart
 
         val xVal = ArrayList<String>()
@@ -72,9 +71,9 @@ class HomeFragment : Fragment() {
         homeBinding.typeBPlus.text = "97"
         homeBinding.typeOPlus.text = "130"
         homeBinding.typeAbPlus.text = "76"
-        homeBinding.typeAMin.text = "11"
-        homeBinding.typeBMin.text = "11"
-        homeBinding.typeAbMin.text = "19"
-        homeBinding.typeOMin.text = "10"
+        homeBinding.typeAMin.text = "10"
+        homeBinding.typeBMin.text = "24"
+        homeBinding.typeOMin.text = "15"
+        homeBinding.typeAbMin.text = "2"
     }
 }

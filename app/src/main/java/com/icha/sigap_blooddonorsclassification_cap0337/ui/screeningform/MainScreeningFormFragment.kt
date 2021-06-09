@@ -10,10 +10,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.icha.sigap_blooddonorsclassification_cap0337.R
-import com.icha.sigap_blooddonorsclassification_cap0337.databinding.ActivityBloodDonorsListBinding
 import com.icha.sigap_blooddonorsclassification_cap0337.databinding.ActivityScreeningFormBinding
-import com.icha.sigap_blooddonorsclassification_cap0337.ui.donorlist.DonorListFragment
-import com.icha.sigap_blooddonorsclassification_cap0337.ui.donorlist.DonorSectionsPagerAdapter
 
 class MainScreeningFormFragment : Fragment() {
 

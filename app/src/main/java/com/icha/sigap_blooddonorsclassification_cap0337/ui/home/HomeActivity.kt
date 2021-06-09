@@ -9,15 +9,18 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.icha.sigap_blooddonorsclassification_cap0337.R
+import com.icha.sigap_blooddonorsclassification_cap0337.databinding.ActivityHomeBinding
 import com.icha.sigap_blooddonorsclassification_cap0337.ui.register.RegisterData
 
 class HomeActivity : AppCompatActivity() {
 
+    private lateinit var homeBinding: ActivityHomeBinding
     lateinit var getHData : RegisterData
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        homeBinding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(homeBinding.root)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
         val navController = findNavController(R.id.nav_host_fragment)

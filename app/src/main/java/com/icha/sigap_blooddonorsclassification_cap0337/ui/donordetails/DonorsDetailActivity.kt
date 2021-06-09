@@ -4,11 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
-import com.bumptech.glide.Glide
-import com.icha.sigap_blooddonorsclassification_cap0337.R
 import com.icha.sigap_blooddonorsclassification_cap0337.data.source.local.entity.DataPendonorEntity
 import com.icha.sigap_blooddonorsclassification_cap0337.databinding.ActivityDonorsDetailBinding
-import com.icha.sigap_blooddonorsclassification_cap0337.databinding.ActivityLoginBinding
 import com.icha.sigap_blooddonorsclassification_cap0337.viewModel.ViewModelFactory
 
 class DonorsDetailActivity : AppCompatActivity() {

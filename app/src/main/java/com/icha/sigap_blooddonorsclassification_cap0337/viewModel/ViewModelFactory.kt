@@ -7,6 +7,7 @@ import com.icha.sigap_blooddonorsclassification_cap0337.data.source.remote.DataP
 import com.icha.sigap_blooddonorsclassification_cap0337.di.Injection
 import com.icha.sigap_blooddonorsclassification_cap0337.ui.donordetails.DonorDetailsViewModel
 import com.icha.sigap_blooddonorsclassification_cap0337.ui.donorlist.DonorListViewModel
+import com.icha.sigap_blooddonorsclassification_cap0337.ui.home.HomeViewModel
 import com.icha.sigap_blooddonorsclassification_cap0337.ui.screeningform.DonorScreeningViewModel
 
 class ViewModelFactory private constructor(private val mDataPendonorRepository: DataPendonorRepository) : ViewModelProvider.NewInstanceFactory(){
@@ -33,6 +34,9 @@ class ViewModelFactory private constructor(private val mDataPendonorRepository: 
             }
             modelClass.isAssignableFrom(DonorDetailsViewModel::class.java) -> {
                 return DonorDetailsViewModel(mDataPendonorRepository) as T
+            }
+            modelClass.isAssignableFrom(HomeViewModel::class.java) -> {
+                return HomeViewModel(mDataPendonorRepository) as T
             }
             else -> throw Throwable("Unknown ViewModel class: " + modelClass.name)
         }

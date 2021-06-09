@@ -5,16 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.icha.sigap_blooddonorsclassification_cap0337.R
-import com.icha.sigap_blooddonorsclassification_cap0337.data.source.local.entity.DataPendonorEntity
 import com.icha.sigap_blooddonorsclassification_cap0337.databinding.FragmentNonpotentialDonorsBinding
-import com.icha.sigap_blooddonorsclassification_cap0337.databinding.FragmentPotentialDonorsBinding
 import com.icha.sigap_blooddonorsclassification_cap0337.ui.donorlist.DonorListViewModel
 import com.icha.sigap_blooddonorsclassification_cap0337.viewModel.ViewModelFactory
-import com.icha.sigap_blooddonorsclassification_cap0337.vo.Status
 
 class NonPotentialDonorsFragment : Fragment() {
 
@@ -38,7 +33,6 @@ class NonPotentialDonorsFragment : Fragment() {
             val factory = ViewModelFactory.getInstance(requireActivity())
             nonpotentialViewModel = ViewModelProvider(this, factory)[DonorListViewModel::class.java]
             nonpotentialAdapter = NonPotentialAdapter()
-            //nonPotentialAdapter.setNPList()         // put data to rv
 
             nonpotentialDonorsBinding.progressBar.visibility = View.VISIBLE
             nonpotentialViewModel.getDataNon().observe(viewLifecycleOwner, { nonPotentialData ->

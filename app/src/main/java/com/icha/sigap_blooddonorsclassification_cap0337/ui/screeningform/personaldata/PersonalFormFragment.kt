@@ -117,7 +117,6 @@ class PersonalFormFragment : Fragment(), View.OnClickListener {
                 val mFragmentManager = fragmentManager
                 mFragmentManager?.beginTransaction()?.apply {
                     replace(R.id.frame_container, mRiwayatDonorFragment)
-//                    activityScreeningFormBinding.viewPager.setCurrentItem(1)
                     addToBackStack(null)
                     commit()
                 }

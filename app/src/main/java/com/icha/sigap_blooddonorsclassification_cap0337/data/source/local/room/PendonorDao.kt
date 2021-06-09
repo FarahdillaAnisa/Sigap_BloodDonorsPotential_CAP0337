@@ -3,7 +3,6 @@ package com.icha.sigap_blooddonorsclassification_cap0337.data.source.local.room
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.icha.sigap_blooddonorsclassification_cap0337.data.source.local.entity.DataPendonorEntity
-import com.icha.sigap_blooddonorsclassification_cap0337.vo.Resource
 
 @Dao
 interface PendonorDao {
@@ -19,8 +18,11 @@ interface PendonorDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertData(data: DataPendonorEntity)
-//
-//    @Insert(onConflict = OnConflictStrategy.REPLACE)
-//    fun insertDataDetail(dataDetail : DataPendonorEntity)
+
+    @Query("SELECT COUNT(nik) FROM datapendonortbl WHERE nomorprediksi = 1")
+    fun getIntPotensial(): Int
+
+    @Query("SELECT COUNT(nik) FROM datapendonortbl WHERE nomorprediksi = 0")
+    fun getIntNon(): Int
 
 }

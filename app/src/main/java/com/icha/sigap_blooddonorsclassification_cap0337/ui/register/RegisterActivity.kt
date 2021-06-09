@@ -20,14 +20,12 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_register)
 
         registerBinding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(registerBinding.root)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setTitle("Register")
-        //supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#F6F6F6")))
         supportActionBar?.elevation = 0f
 
         registerBinding.btnGotoRegister.setOnClickListener(this)
