@@ -27,3 +27,4 @@ Compatibility :
 - Permission : internet, local storage
 
 Documentation : 
+https://github.com/FarahdillaAnisa/Sigap_BloodDonorsPotential_CAP0337/blob/dfcf8c22c3e84ab1ae5421d9f35736719c7b0fff/documentation.txt
