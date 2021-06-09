@@ -10,12 +10,12 @@ class SectionsPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> PersonalFormFragment()
-            1 -> RiwayatDonorFragment()
+//            1 -> RiwayatDonorFragment()
             else -> Fragment()
         }
     }
 
     override fun getItemCount(): Int {
-        return 2
+        return 1
     }
 }

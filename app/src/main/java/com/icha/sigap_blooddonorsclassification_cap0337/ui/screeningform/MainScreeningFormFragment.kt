@@ -17,7 +17,7 @@ class MainScreeningFormFragment : Fragment() {
     companion object
     {
         @StringRes
-        private val TAB = intArrayOf(R.string.data_pendonor, R.string.riwayat_pendonor)
+        private val TAB = intArrayOf(R.string.data_pendonor)
     }
 
     private lateinit var screeningFormBinding: ActivityScreeningFormBinding
