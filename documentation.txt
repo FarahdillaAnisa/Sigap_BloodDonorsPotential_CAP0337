@@ -1,0 +1,31 @@
+Documentation : 
+
+1. Install application, then open it.
+
+2. Splash screen will show up for 2 seconds, then application will show Login page.
+
+4. If user haven't been registered yet, user can choose to go to Register page by pressing register button. Application will show Register page, then user can fill register information (name, email, phone number, password). Press register button, application will check empty field and save data to storage.
+
+5. After register, application will go back to Login page. User can login using registered email and password.
+
+6. If user is registered, then user can type email and password. Press login button, application will check empty field and match with saved data. If there is no problem, application will show home page.
+
+7. Home page will show statistical information about blood stock and number of donor people. On the bottom of Home page, there is 3 bottom navigation. Home, donor list, and forms button.
+
+8. Home button is used to go to Home page. If user pressed home button, application will redirect user to Home page.
+	8.1. Home page will show statistical information about blood stock and number of donor people.
+
+9. Donor list button is used to go to Donor List page. If user pressed donor list button, application will redirect user to Donor List page.
+	9.1. Donor List page will show list of potential and non potential donors, user can add new donor by pressing add button on bottom left of the page.
+	9.2. Application will redirect user to Forms page.
+	9.3. If user press one of the donor list on screen, application will show Details page.
+
+11. Forms button is used to go to Forms page. If user pressed forms button, application will directs user to Forms page.
+	11.1. Forms page will show donor profile data form and donor history form.
+	11.2. Every forms input will be validated to prevent any empty input being made, then application will save data in storage.
+	11.3. Machine learning will determine whether that person is a potential donor or not.
+	11.4. Screening result can be seen in Donor List page.
+
+12. IF user choose to go to Details page, application will show Details page. User can find needed information related to the donor person. User can press back button on top left of the screen to go back to Home page.
+
+13. If user doesn't want to use the application anymore, user can choose to logout by presseing logout button on Home page menu.
