@@ -19,7 +19,7 @@ Sigap Blood Donor Potential Application is an application that is used by PMI (P
 Feature : 
 1. Small sized application that is easy to install and don't use a lot of storage
 2. User Interface is easy to use and understand
-3. Save important data in secure Cloud storage (requires internet)
+3. Save data in local storage
 4. Fill necessary data on application (donors personal data, donor history)
 5. Screening process is done in short amount of time by machine learning
 
@@ -37,7 +37,7 @@ Build with :
 
 Compatibility : 
 - Minimum Android version : 5.0 (Lolipop) or above
-- Permission : internet, local storage
+- Permission : local storage
 
 Documentation : 
 https://github.com/FarahdillaAnisa/Sigap_BloodDonorsPotential_CAP0337/blob/dfcf8c22c3e84ab1ae5421d9f35736719c7b0fff/documentation.txt
