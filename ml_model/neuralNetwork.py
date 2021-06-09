@@ -3,7 +3,7 @@ import time
 import pandas as pd
 import numpy as np
 import tensorflow as tf
-from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 from sklearn.model_selection import train_test_split
 from keras.models import Sequential
 from keras.layers import InputLayer
@@ -22,6 +22,10 @@ print(dataset_df)
 
 y = dataset_df['donated in march']
 X = dataset_df.drop(['donated in march'], axis = 1)
+
+scaler = MinMaxScaler()
+scaler.fit(X)
+X = scaler.transform(X)
 
 model = Sequential()
 model.add(Dense(60, input_dim=4, activation='relu'))
