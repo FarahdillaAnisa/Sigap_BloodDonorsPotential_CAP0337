@@ -2,7 +2,7 @@ Documentation :
 
 1. Install application, then open it.
 
-2. Splash screen will show up for 2 seconds, then application will show Login page.
+2. Splash screen will show up for 3 seconds, then application will show Login page.
 
 4. If user haven't been registered yet, user can choose to go to Register page by pressing register button. Application will show Register page, then user can fill register information (name, email, phone number, password). Press register button, application will check empty field and save data to storage.
 
