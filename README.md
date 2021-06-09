@@ -22,6 +22,18 @@ Feature :
 4. Fill necessary data on application (donors personal data, donor history)
 5. Screening process is done in short amount of time by machine learning
 
+Build with : 
+- Android Studio
+- Kotlin
+- Material Spinner
+- CircleImageView
+- Glide
+- MPAndroidChart
+- Room
+- LiveData
+- MVVM (Model View ViewModel)
+- Tensorflow Lite
+
 Compatibility : 
 - Minimum Android version : 5.0 (Lolipop) or above
 - Permission : internet, local storage
